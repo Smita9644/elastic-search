@@ -1,0 +1,8 @@
+{
+  "query": {
+    "multi_match": {
+      "query" : "south cirle"
+    , "fields": ["title","description"]
+    }
+  }
+}

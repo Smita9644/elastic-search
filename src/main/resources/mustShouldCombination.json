@@ -1,0 +1,40 @@
+{
+  "query": {
+    "bool": {
+      "should": [{
+        "bool": {
+          "must": [{
+            "match": {
+              "title": "jacket"
+            }
+          },
+            {
+              "range": {
+                "price": {
+                  "gte": 5000
+                }
+              }
+            },
+            {
+              "terms": {
+                "size": [
+                  "xl", "m"
+                ]
+              }
+            }
+          ]
+        }
+      },
+        {
+          "bool": {
+            "should": [{
+              "match": {
+                "title": "cirle"
+              }
+            }]
+          }
+        }
+      ]
+    }
+  }
+}

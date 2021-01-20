@@ -1,0 +1,13 @@
+{
+  "_source": ["categories","description","sub_categories"],
+  "sort": [
+    {
+      "price": {
+        "order": "asc"
+      },
+      "total":{
+        "order":"asc"
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "query": {
+    "match_phrase": {
+      "description": {
+        "query": "south indian"
+      }
+    }
+  }
+}

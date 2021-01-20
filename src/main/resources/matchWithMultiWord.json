@@ -1,0 +1,10 @@
+{
+  "query": {
+    "match": {
+      "description": {
+        "query" : "indian south",
+        "operator":"AND"
+      }
+    }
+  }
+}
