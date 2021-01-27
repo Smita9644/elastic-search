@@ -1,0 +1,7 @@
+{
+  "aggs": {
+    "products_without_a_total": {
+      "missing": { "field": "total" }
+    }
+  }
+}

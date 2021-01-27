@@ -1,0 +1,10 @@
+{
+"size":0,
+"aggs" : {
+"cyclist_injuries": {
+"stats" : {
+"field": "price"
+}
+}
+}
+}

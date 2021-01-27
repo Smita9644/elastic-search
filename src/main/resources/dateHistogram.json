@@ -1,0 +1,10 @@
+{
+  "aggs" : {
+    "months": {
+      "date_histogram": {
+        "field": "updated_date",
+        "interval": "month"
+      }
+    }
+  }
+}

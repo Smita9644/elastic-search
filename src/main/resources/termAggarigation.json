@@ -1,0 +1,8 @@
+{
+  "size": 0,
+  "aggs": {
+    "Terms_Aggregation" : {
+      "terms": {
+        "field": "categories"}}
+  }
+}

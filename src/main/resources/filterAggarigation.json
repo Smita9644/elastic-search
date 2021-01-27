@@ -1,0 +1,11 @@
+{ "size": 0,
+  "aggs": {
+    "User_based_filter" : {
+      "filter" : {
+        "term": {
+          "categories": "electronics"}},
+      "aggs" : {
+        "avg_price" : {
+          "avg" : {
+            "field" : "price" } }
+      }}}}

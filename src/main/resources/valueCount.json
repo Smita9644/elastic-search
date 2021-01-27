@@ -1,0 +1,9 @@
+{ "size": 0,
+  "aggs": {
+    "categories_count": {
+      "value_count": {
+        "field": "categories"
+      }
+    }
+  }
+}

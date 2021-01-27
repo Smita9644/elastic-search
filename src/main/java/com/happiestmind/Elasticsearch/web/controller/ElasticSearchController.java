@@ -146,15 +146,118 @@ public class ElasticSearchController {
     return new ResponseEntity<>(
         new JSONObject(EntityUtils.toString(response.getEntity())).toMap(), HttpStatus.OK);
   }
+
   @GetMapping("/mustShouldCombination")
   public ResponseEntity<Object> findByMustAndShould() throws IOException {
     Request request = new Request("get", "/index3/_search");
     request.setJsonEntity(
-            FileUtils.readFileToString(
-                    new File("src\\main\\resources\\mustShouldCombination.json"),
-                    StandardCharsets.UTF_8.name()));
+        FileUtils.readFileToString(
+            new File("src\\main\\resources\\mustShouldCombination.json"),
+            StandardCharsets.UTF_8.name()));
     Response response = elasticSearchConfig.lowLevelClient().performRequest(request);
     return new ResponseEntity<>(
-            new JSONObject(EntityUtils.toString(response.getEntity())).toMap(), HttpStatus.OK);
+        new JSONObject(EntityUtils.toString(response.getEntity())).toMap(), HttpStatus.OK);
+  }
+
+  @GetMapping("/buket")
+  public ResponseEntity<Object> dateHistogram() throws IOException {
+    Request request = new Request("get", "/index3/_search");
+    request.setJsonEntity(
+        FileUtils.readFileToString(
+            new File("src\\main\\resources\\dateHistogram.json"), StandardCharsets.UTF_8.name()));
+    Response response = elasticSearchConfig.lowLevelClient().performRequest(request);
+    return new ResponseEntity<>(
+        new JSONObject(EntityUtils.toString(response.getEntity())).toMap(), HttpStatus.OK);
+  }
+
+  @GetMapping("/valueCount")
+  public ResponseEntity<Object> valueCount() throws IOException {
+    Request request = new Request("get", "/index4/_search");
+    request.setJsonEntity(
+        FileUtils.readFileToString(
+            new File("src\\main\\resources\\valueCount.json"), StandardCharsets.UTF_8.name()));
+    Response response = elasticSearchConfig.lowLevelClient().performRequest(request);
+    return new ResponseEntity<>(
+        new JSONObject(EntityUtils.toString(response.getEntity())).toMap(), HttpStatus.OK);
+  }
+
+  @GetMapping("/termAgg")
+  public ResponseEntity<Object> termAggarigation() throws IOException {
+    Request request = new Request("get", "/index4/_search");
+    request.setJsonEntity(
+        FileUtils.readFileToString(
+            new File("src\\main\\resources\\termAggarigation.json"),
+            StandardCharsets.UTF_8.name()));
+    Response response = elasticSearchConfig.lowLevelClient().performRequest(request);
+    return new ResponseEntity<>(
+        new JSONObject(EntityUtils.toString(response.getEntity())).toMap(), HttpStatus.OK);
+  }
+
+  @GetMapping("/nasted")
+  public ResponseEntity<Object> nastedAggarigation() throws IOException {
+    Request request = new Request("get", "/index3/_search");
+    request.setJsonEntity(
+        FileUtils.readFileToString(
+            new File("src\\main\\resources\\filterAggarigation.json"),
+            StandardCharsets.UTF_8.name()));
+    Response response = elasticSearchConfig.lowLevelClient().performRequest(request);
+    return new ResponseEntity<>(
+        new JSONObject(EntityUtils.toString(response.getEntity())).toMap(), HttpStatus.OK);
+  }
+
+  @GetMapping("/top")
+  public ResponseEntity<Object> topAggarigation() throws IOException {
+    Request request = new Request("get", "/index3/_search");
+    request.setJsonEntity(
+        FileUtils.readFileToString(
+            new File("src\\main\\resources\\top.json"), StandardCharsets.UTF_8.name()));
+    Response response = elasticSearchConfig.lowLevelClient().performRequest(request);
+    return new ResponseEntity<>(
+        new JSONObject(EntityUtils.toString(response.getEntity())).toMap(), HttpStatus.OK);
+  }
+
+  @GetMapping("/stats")
+  public ResponseEntity<Object> statsAggarigation() throws IOException {
+    Request request = new Request("get", "/index3/_search");
+    request.setJsonEntity(
+        FileUtils.readFileToString(
+            new File("src\\main\\resources\\stats.json"), StandardCharsets.UTF_8.name()));
+    Response response = elasticSearchConfig.lowLevelClient().performRequest(request);
+    return new ResponseEntity<>(
+        new JSONObject(EntityUtils.toString(response.getEntity())).toMap(), HttpStatus.OK);
+  }
+
+  @GetMapping("/sum")
+  public ResponseEntity<Object> sumAggarigation() throws IOException {
+    Request request = new Request("get", "/index3/_search");
+    request.setJsonEntity(
+        FileUtils.readFileToString(
+            new File("src\\main\\resources\\sum.json"), StandardCharsets.UTF_8.name()));
+    Response response = elasticSearchConfig.lowLevelClient().performRequest(request);
+    return new ResponseEntity<>(
+        new JSONObject(EntityUtils.toString(response.getEntity())).toMap(), HttpStatus.OK);
+  }
+
+  @GetMapping("/rangeAgg")
+  public ResponseEntity<Object> rangeAggarigation() throws IOException {
+    Request request = new Request("get", "/index3/_search");
+    request.setJsonEntity(
+        FileUtils.readFileToString(
+            new File("src\\main\\resources\\RangeAggarigation.json"),
+            StandardCharsets.UTF_8.name()));
+    Response response = elasticSearchConfig.lowLevelClient().performRequest(request);
+    return new ResponseEntity<>(
+        new JSONObject(EntityUtils.toString(response.getEntity())).toMap(), HttpStatus.OK);
+  }
+
+  @GetMapping("/max")
+  public ResponseEntity<Object> maxAggarigation() throws IOException {
+    Request request = new Request("get", "/index3/_search");
+    request.setJsonEntity(
+        FileUtils.readFileToString(
+            new File("src\\main\\resources\\maxAggarigation.json"), StandardCharsets.UTF_8.name()));
+    Response response = elasticSearchConfig.lowLevelClient().performRequest(request);
+    return new ResponseEntity<>(
+        new JSONObject(EntityUtils.toString(response.getEntity())).toMap(), HttpStatus.OK);
   }
 }

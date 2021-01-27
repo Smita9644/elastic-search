@@ -1,0 +1,27 @@
+{
+  "size":0,
+  "aggs": {
+    "top_tags": {
+      "terms": {
+        "field": "categories"
+      },
+      "aggs": {
+        "top_sales_hits": {
+          "top_hits": {
+            "sort": [
+              {
+                "price": {
+                  "order": "desc"
+                }
+              }
+            ],
+            "_source": {
+              "includes": [ "categories", "price" ]
+            },
+            "size" : 1
+          }
+        }
+      }
+    }
+  }
+}
